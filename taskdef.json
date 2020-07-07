@@ -1,0 +1,52 @@
+{
+	"executionRoleArn": "{Substitute this with what gets generated from the CDK template}",
+	"containerDefinitions": [
+		{
+			"portMappings": [
+				{
+					"hostPort": 8080,
+					"protocol": "tcp",
+					"containerPort": 8080
+				}
+			],
+			"cpu": 1,
+			"memory": 512,
+			"image": "<IMAGE1_NAME>",
+			"name": "DefaultContainer"
+		}
+	],
+	"memory": "512",
+	"taskRoleArn": "{Substitute this with what gets generated from the CDK template}",
+	"compatibilities": [
+		"EC2",
+		"FARGATE"
+	],
+	"family": "{Substitute this with what gets generated from the CDK template}",
+	"requiresAttributes": [
+		{
+			"name": "com.amazonaws.ecs.capability.ecr-auth"
+		},
+		{
+			"name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+		},
+		{
+			"name": "com.amazonaws.ecs.capability.task-iam-role"
+		},
+		{
+			"name": "ecs.capability.execution-role-ecr-pull"
+		},
+		{
+			"name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+		},
+		{
+			"name": "ecs.capability.task-eni"
+		}
+	],
+	"requiresCompatibilities": [
+		"FARGATE"
+	],
+	"networkMode": "awsvpc",
+	"cpu": "256",
+	"revision": 6,
+	"status": "ACTIVE"
+}
